@@ -17,4 +17,6 @@
 @property (nonatomic, copy) void(^sourceBlock)(UIImage *image);
 @property (nonatomic, assign) BOOL followRedirects;
 
++ (NSCache *)cache;
+
 @end

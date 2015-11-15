@@ -17,6 +17,22 @@
 
 @implementation DZFICOperation
 
++ (NSCache *)cache
+{
+    
+    static dispatch_once_t onceToken;
+    static NSCache *cache = nil;
+    dispatch_once(&onceToken, ^{
+        
+        cache = [[NSCache alloc] init];
+        cache.name = @"DZFICNetworkControllerCache";
+        
+    });
+    
+    return cache;
+    
+}
+
 - (BOOL)isAsynchronous
 {
     return YES;
@@ -32,12 +48,32 @@
     // as no one is there to receive the image.
     if(!self.sourceURL || !self.sourceBlock) return;
     
+    NSCache *cache = [[self class] cache];
+    
+    UIImage *cachedImage = [cache objectForKey:self.sourceURL.absoluteString];
+    
+    if(cachedImage)
+    {
+        
+        if(self.sourceBlock) self.sourceBlock(cachedImage);
+        
+        return;
+        
+    }
+    
     NSString *tempPath = [[@"~/tmp" stringByExpandingTildeInPath] stringByAppendingPathComponent:[self.sourceURL lastPathComponent]];
     
     if([[NSFileManager defaultManager] fileExistsAtPath:tempPath])
     {
         
         UIImage *image = [[UIImage alloc] initWithContentsOfFile:tempPath];
+        
+        if(image)
+        {
+            
+            [cache setObject:image forKey:self.sourceURL.absoluteString];
+            
+        }
         
         if(self.sourceBlock) self.sourceBlock(image);
         
@@ -79,6 +115,13 @@
         {
             
             UIImage *image = [[UIImage alloc] initWithContentsOfFile:tempPath];
+            
+            if(image)
+            {
+                
+                [cache setObject:image forKey:self.sourceURL.absoluteString];
+                
+            }
             
             if(self.sourceBlock) self.sourceBlock(image);
             
