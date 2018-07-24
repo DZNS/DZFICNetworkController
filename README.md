@@ -31,7 +31,7 @@ then run, `carthage update` to grab the latest source.
 ### How it works
 `DZFICNetworkController` utilizes the `sourceImageURLWithFormatName:` method on your `id<FICEntity>` object to fetch a URL for the image to be downloaded. No extra efforts required.
 
-[1]: https://github.com/path/FastImageCache.git
+[1]: https://github.com/mallorypaine/FastImageCache
 
 ### License
 MIT License. Please refer to the LICENSE file for more details.
