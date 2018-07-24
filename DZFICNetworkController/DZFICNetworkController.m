@@ -90,14 +90,14 @@
    completionBlock:(FICImageRequestCompletionBlock)completionBlock
 {
     
-    NSURL *URL = [entity sourceImageURLWithFormatName:formatName];
+    NSURL *URL = [entity fic_sourceImageURLWithFormatName:formatName];
     
     // We don't have a valid URL.
     if(!URL) return;
     
     DZFICOperation *op = [[DZFICOperation alloc] init];
     op.sourceURL = URL;
-    op.UUID = [entity UUID];
+    op.UUID = [entity fic_UUID];
     op.format = formatName;
     op.followRedirects = [self shouldFollowRedirects];
     op.sourceBlock = ^(UIImage *image) {
@@ -128,8 +128,8 @@
         if(stop) break;
         
         // Make sure we pick out the right OP
-        if([operation.UUID isEqualToString:[entity UUID]]
-           && [[operation sourceURL] isEqual:[entity sourceImageURLWithFormatName:formatName]]
+        if([operation.UUID isEqualToString:[entity fic_UUID]]
+           && [[operation sourceURL] isEqual:[entity fic_sourceImageURLWithFormatName:formatName]]
            && [[operation format] isEqualToString:formatName])
         {
             

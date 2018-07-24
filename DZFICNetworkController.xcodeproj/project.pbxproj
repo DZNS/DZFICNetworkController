@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F085FF27210792C700D74145 /* FastImageCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F085FF26210792C600D74145 /* FastImageCache.framework */; };
 		F098B2B61BF732B300F8F678 /* DZCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = F098B2AF1BF732B300F8F678 /* DZCategories.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		F098B2B71BF732B300F8F678 /* DZCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = F098B2B01BF732B300F8F678 /* DZCategories.m */; };
 		F098B2B81BF732B300F8F678 /* DZFICNetworkController.h in Headers */ = {isa = PBXBuildFile; fileRef = F098B2B11BF732B300F8F678 /* DZFICNetworkController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -14,10 +15,10 @@
 		F098B2BA1BF732B300F8F678 /* DZFICOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = F098B2B31BF732B300F8F678 /* DZFICOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F098B2BB1BF732B300F8F678 /* DZFICOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F098B2B41BF732B300F8F678 /* DZFICOperation.m */; };
 		F098B2BC1BF732B300F8F678 /* NetworkController.h in Headers */ = {isa = PBXBuildFile; fileRef = F098B2B51BF732B300F8F678 /* NetworkController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F098B2CE1BF7366400F8F678 /* FastImageCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F098B2CD1BF7366400F8F678 /* FastImageCache.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F085FF26210792C600D74145 /* FastImageCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FastImageCache.framework; path = Carthage/Build/iOS/FastImageCache.framework; sourceTree = SOURCE_ROOT; };
 		F098B2A41BF7327E00F8F678 /* DZFICNetworkController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DZFICNetworkController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F098B2A91BF7327E00F8F678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F098B2AF1BF732B300F8F678 /* DZCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZCategories.h; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		F098B2B31BF732B300F8F678 /* DZFICOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZFICOperation.h; sourceTree = "<group>"; };
 		F098B2B41BF732B300F8F678 /* DZFICOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZFICOperation.m; sourceTree = "<group>"; };
 		F098B2B51BF732B300F8F678 /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
-		F098B2CD1BF7366400F8F678 /* FastImageCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FastImageCache.framework; path = Carthage/Build/iOS/FastImageCache.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F098B2CE1BF7366400F8F678 /* FastImageCache.framework in Frameworks */,
+				F085FF27210792C700D74145 /* FastImageCache.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +61,7 @@
 		F098B2A61BF7327E00F8F678 /* DZFICNetworkController */ = {
 			isa = PBXGroup;
 			children = (
-				F098B2CD1BF7366400F8F678 /* FastImageCache.framework */,
+				F085FF26210792C600D74145 /* FastImageCache.framework */,
 				F098B2B51BF732B300F8F678 /* NetworkController.h */,
 				F098B2AF1BF732B300F8F678 /* DZCategories.h */,
 				F098B2B01BF732B300F8F678 /* DZCategories.m */,
@@ -115,7 +115,7 @@
 		F098B29B1BF7327E00F8F678 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Dezine Zync Studios LLP.";
 				TargetAttributes = {
 					F098B2A31BF7327E00F8F678 = {
@@ -172,13 +172,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -219,13 +229,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -255,6 +275,7 @@
 		F098B2AD1BF7327E00F8F678 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -275,6 +296,7 @@
 		F098B2AE1BF7327E00F8F678 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
